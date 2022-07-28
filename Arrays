@@ -1,0 +1,18 @@
+# Script:                       Ops 201 Class 04 Ops Challenge Solution
+# Author:                       Courtney Johnson  
+# Date of latest revision:      7/28/2022
+# Purpose:                      Write a script that creates four directories: dir1, dir2, dir3, dir4, put the names of the four directories in an array
+                                references the array variable to create a new .txt file in each directory
+
+#Main
+
+#!/bin/bash
+mkdir dir1 dir2 dir3 dir4
+array_name=("dir1" "dir2" "dir3" "dir4")
+echo ${array_name[0]}
+touch ${array_name[0]}/Arrays.txt
+touch ${array_name[1]}/Arrays.txt
+touch ${array_name[2]}/Arrays.txt
+touch ${array_name[3]}/Arrays.txt
+
+#End
