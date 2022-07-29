@@ -9,10 +9,10 @@
 #!/bin/bash
 mkdir dir1 dir2 dir3 dir4
 array_name=("dir1" "dir2" "dir3" "dir4")
-echo ${array_name[0]}
-touch ${array_name[0]}/Arrays.txt
-touch ${array_name[1]}/Arrays.txt
-touch ${array_name[2]}/Arrays.txt
-touch ${array_name[3]}/Arrays.txt
+
+touch ${array_name[0]}/New.txt
+touch ${array_name[1]}/New.txt
+touch ${array_name[2]}/New.txt
+touch ${array_name[3]}/New.txt
 
 #End
