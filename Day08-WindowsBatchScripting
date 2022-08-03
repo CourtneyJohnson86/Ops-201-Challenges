@@ -1,0 +1,3 @@
+@echo off
+ROBOCOPY /s/e C:\Users\j.thompson\Desktop\My Project Files E:\
+echo Logged time = %time% %date%>> log.txt
