@@ -4,6 +4,8 @@
 # Date of latest revision:      08/04/2022
 # Purpose:          Create a Powershell script that fetches useful System event logs
 
+$Output = Get-EventLog -Logname System -After (Get-Date).AddDays(-1)
+$Output > C:\Users\Admin\Desktop\last_24.txt
 #Print to the screen all events with ID of 16 from the System event log.
 get-eventlog -logname system -instanceid 16
 #Print to the screen the most recent 20 entries from the System event log.’
