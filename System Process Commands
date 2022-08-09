@@ -1,0 +1,22 @@
+# Script Name: System Process Commands
+# Author: Courtney Johnson
+# Date of last revision: 08/08/2022
+# Purpose: Analyze, initialize, and terminate processes (programs) using Powershell commands
+
+# Main
+#Print to the terminal screen all active processes ordered by highest CPU time consumption at the top.
+Get-Process | Sort-Object COU -descending
+#Print to the terminal screen all active processes ordered by highest Process Identification Number at the top.
+get-process | sort-object -property id -descending
+#Print to the terminal screen the top five active processes ordered by highest Working Set (WS(K)) at the top.
+get-process | sort-object -property ws -descending | select-object -first 5
+#Start the process Internet Explorer (iexplore.exe) and have it open -.
+start-process -filepath "C:\Program Files (x86)\Internet Explorer\iexplore.exe" https://owasp.org/www-project-top-ten/ 
+#Start the process Internet Explorer (iexplore.exe) ten times using a for loop. Have each instance open https://owasp.org/www-project-top-ten/.
+for ($i = 1; $i -le 10 ; $i++) {start-process -filepath "C:\Program Files (x86)\Internet Explorer\iexplore.exe" https://owasp.org/www-project-top-ten/}
+#Close all Internet Explorer windows.
+
+#Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, such as Internet Explorer or MS Edge.
+Stop-Process -id 6388
+
+# End
