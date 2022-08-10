@@ -1,0 +1,24 @@
+#Script Name Powershell IP Analysis
+#Author  Courtney Johnson  
+#Date of last revision 08/09/2022
+#Description of purpose Powershell script that returns the IPv4 address of the computer
+#Declaration of variables $time
+#Declaration of functions get-timezone getsystemtimezones
+#Main
+#Create a local file called network_report.txt that holds the contents of an ipconfig /all command.
+new-item network_report2.txt
+ipconfig /all | out-file network_report2.txt
+#Use Select-String to search network_report.txt and return only the IP version 4 address.
+select-string -path network_report2.txt -pattern ipv4
+#Remove the network_report2.txt when you are finished searching it.
+remove-item network_report2.txt
+#For this challenge, you must use at least one variable and one function.
+Funtion Get-TimeZone {
+     echo "Time Zone"
+}
+Function GetSystemTimeZones {
+     echo "All System Time Zones:
+     $time = "timeanddate.com/worldclock"
+     echo $time
+ }
+ #End
